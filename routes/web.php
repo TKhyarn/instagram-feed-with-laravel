@@ -1,5 +1,6 @@
 <?php
 
+use \Dymantic\InstagramFeed\InstagramFeed;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/caddy-check', 'App\Http\Controllers\CaddyController@check');
 Route::get('/', function () {
+    $feed = InstagramFeed::for('testapi278');
+    ddd($feed);
     return view('welcome');
 });
