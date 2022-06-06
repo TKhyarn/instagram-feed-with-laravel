@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InstagramController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[InstagramController::class, 'show']);
+Route::get('/instagram-auth-response', [InstagramController::class, 'complete']);
+
